@@ -10,8 +10,10 @@ description: get resources in a jar
 但是，如果我们把代码打成一个 jar 包以后，即使将资源文件一并打包，这些东西也找不出来了
 这个 jar 包内的目录为：
 
-              edu/hxraid/Resource.class
-              resource/res.txt
+```
+edu/hxraid/Resource.class
+resource/res.txt
+```              
 
 ```java
 // 源代码 3：

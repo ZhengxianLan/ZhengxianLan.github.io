@@ -20,7 +20,7 @@ description: make jar
 An existing manifest file must end with a new line character.  
 jar does not parse the last line of a manifest file if it does not end with a new line character.
 </pre>
-3. 查看 jar 内所有的文件 (不包括目录)： jar -tf taskomc.jar |grep -v '/$'|nl
+3. 查看 jar 内所有的文件 (不包括目录)： `jar -tf taskomc.jar |grep -v '/$'|nl`
 
 
 [jar 的 mannual](https://gist.githubusercontent.com/ZhengxianLan/80b10d46db78d788cca7/raw/fcb1e4d88ab52e2d09bd9c369582d20d3eb96420/man-jar)

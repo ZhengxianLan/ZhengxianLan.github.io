@@ -12,7 +12,7 @@ description: Vps ssh alive
 
 总体来说有两个方法：
 
-#  依赖 ssh 客户端定时发送心跳。
+###  依赖 ssh 客户端定时发送心跳。
 
 putty、SecureCRT、XShell 都有这个功能，但是目测不太好用。
 
@@ -30,7 +30,7 @@ ServerAliveCountMax 999
 
 即每隔 20 秒，向服务器发出一次心跳。若超过 999 次请求，都没有发送成功，则会主动断开与服务器端的连接。
 
-# 更改服务器端，即在 ssh 远端。
+### 更改服务器端，即在 ssh 远端。
 
 - 打开
 ``` bash
