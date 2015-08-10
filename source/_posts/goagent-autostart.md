@@ -30,12 +30,11 @@ tags: goagent
 ### 还是想 goagent 自启动
 
 - 转移 goagent
-
-	``` bash
-	sudo mv /path/to/goagent /opt
-	sudo ln -sf /opt/goagent/local/proxy.sh /etc/init.d/goagent
-	sudo update-rc.d goagent/defaults
-	``` 
+```bash
+sudo mv /path/to/goagent /opt
+sudo ln -sf /opt/goagent/local/proxy.sh /etc/init.d/goagent
+sudo update-rc.d goagent/defaults
+```
 
 ### 运行级别
 
@@ -47,7 +46,8 @@ tags: goagent
 
 对应目录 rc0.d,rc1.d......rc6.d。每个目录下都是到 init.d 目录的一部分一些链接，真正干活的 init.d 里的脚本。链接名中 S 表示开启（Start），K 表示停止（Kill）。数字代表开启或者停止的顺序。
 
-<pre>
+
+```bash
 $ sudo update-rc.d goagent defaults
 Adding system startup for /etc/init.d/goagent ...
    /etc/rc0.d/K20goagent -> ../init.d/goagent
@@ -57,5 +57,4 @@ Adding system startup for /etc/init.d/goagent ...
    /etc/rc3.d/S20goagent -> ../init.d/goagent
    /etc/rc4.d/S20goagent -> ../init.d/goagent
    /etc/rc5.d/S20goagent -> ../init.d/goagent
-
-</pre>
+```

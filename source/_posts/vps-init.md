@@ -1,8 +1,8 @@
 ---
 title: vps-init
 date: 2015-07-16 19:40:00
-categories: linux
-tags: vps
+categories: [linux,vps]
+tags: [vps]
 ---
 
 
