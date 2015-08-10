@@ -3,7 +3,7 @@ layout: post
 title: util scripts
 categories: [linux]
 tags: [util]
-description: linux mini script
+description: linux 2mini script
 date: 2014-07-16
 ---
 
