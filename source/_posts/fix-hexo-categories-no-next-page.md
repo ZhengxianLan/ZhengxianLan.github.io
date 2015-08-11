@@ -11,7 +11,7 @@ hexo默认的landscape主题已经11个月没更新了。
 打开 themes/landscape/layout/_partial/archive.ejs
 添加一下到底部
 
-```html
+```
 <% if (page.total > 1){ %>
     <nav id="page-nav">
       <%- paginator({
