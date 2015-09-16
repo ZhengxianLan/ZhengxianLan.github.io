@@ -22,6 +22,12 @@ tags: [https]
 
 - java
 [使用到的 jar 包](http://pan.baidu.com/s/1nt5TFol)
+<pre>
+httpclient-4.1.3.jar
+httpclient-cache-4.1.3.jar
+httpcore-4.1.4.jar
+httpmime-4.1.3.jar
+</pre>
 [demo](https://gist.github.com/ZhengxianLan/0d5fc92562812a49aed7)
 
 - ruby
