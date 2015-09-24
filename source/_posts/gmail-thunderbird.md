@@ -1,12 +1,11 @@
 ---
 title: gmail-thunderbird
 date: 2015-08-10 01:35:45
-categories: google
+categories: miscellaneous
 tags: gmail
 ---
 
 重装或者更改代理之后，都会造成 thunderbird 无法链接 gmail 的情况
-随即放狗搜，然并卵
 其实，thundbird 已经弹出了 flash 提示了
 访问 [gg 帮助页面](https://support.google.com/mail/answer/78754)
 这里详细描述了各种情况的解决办法
