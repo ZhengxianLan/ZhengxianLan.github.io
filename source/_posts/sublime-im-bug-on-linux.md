@@ -40,3 +40,31 @@ sed "s,\~,$(cd ~;pwd),g" ~/app/sublime_text_3/custom.desktop
 ```
 [sublime_imfix.c for sublime-text-3 的 c 源代码](https://gist.githubusercontent.com/ZhengxianLan/84f66a9ec5ccee72898d/raw/ba3db961dfe9b9abee75f0a35cbcd261bb83d
 e99/sublime-inux-fix-im)
+
+发现直接更改自带的sublime_text.desktop效果更好
+ - 可以直接在launcher正确显示图标和输入中文
+ <pre>
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Sublime
+GenericName=Text Editor
+Comment=Sophisticated text editor for code, markup and prose
+Exec=bash -c "export LD_PRELOAD='/home/lan/app/sublime_text_3/libsublime-imfix.so'; /home/lan/app/sublime_text_3/sublime_text %F"
+Terminal=false
+MimeType=text/plain;
+Icon=/home/lan/app/sublime_text_3/Icon/256x256/sublime-text.png
+Categories=TextEditor;Development;
+StartupNotify=true
+Actions=Window;Document;
+
+[Desktop Action Window]
+Name=New Window
+Exec=bash -c "export LD_PRELOAD='/home/lan/app/sublime_text_3/libsublime-imfix.so'; /home/lan/app/sublime_text_3/sublime_text %F"
+OnlyShowIn=Unity;
+
+[Desktop Action Document]
+Name=New File
+Exec=bash -c "export LD_PRELOAD='/home/lan/app/sublime_text_3/libsublime-imfix.so'; /home/lan/app/sublime_text_3/sublime_text %F"
+OnlyShowIn=Unity;
+</pre>
