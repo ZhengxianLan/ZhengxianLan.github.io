@@ -1,7 +1,7 @@
 ---
 title: hexo go on
 date: 2015-09-15 16:26:34
-categories: hexo
+categories: ['etc','hexo']
 tags:
 ---
 

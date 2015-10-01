@@ -1,7 +1,7 @@
 ---
 title: GoAgent-Autostart
 date: 2015-07-14 09:31:35
-categories: gfw
+categories: etc
 tags: goagent
 ---
 

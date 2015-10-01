@@ -11,7 +11,7 @@ tags: gmail
 这里详细描述了各种情况的解决办法
 像这次就是只需要
 
- - *通过网络版 Gmail (https://mail.google.com) 登录您的帐户。然后再次使用您的邮件应用查看邮件。*
+ - * 通过网络版 Gmail (https://mail.google.com) 登录您的帐户。然后再次使用您的邮件应用查看邮件。*
 
 如果有多个 gmail 账户，一定记得在这个页面切换到对应不能登录的用户，然后再点击链接跳转。
 之后就可以通过 thunderbird 正常收发 gmail 了.

@@ -1,7 +1,7 @@
 ---
 title: stardict-gtk
 date: 2015-09-17 10:13:58
-categories: ubuntu
+categories: ['linux','ubuntu']
 tags: stardict
 ---
 

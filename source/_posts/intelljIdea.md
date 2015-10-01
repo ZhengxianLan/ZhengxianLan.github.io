@@ -1,5 +1,5 @@
 ---
-title: intelljIdea
+title: Intellj Idea
 date: 2015-09-24 15:20:20
 categories: tool
 tags: ['intelljIdea','java','tomcat']
