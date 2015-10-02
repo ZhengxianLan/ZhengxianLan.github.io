@@ -35,15 +35,16 @@ LD_PRELOAD=./libsublime-imfix.so ./sublime_text
     Icon=~/program/st2/Icon/256x256/sublime_text.png
     StartupNotify=false
 </pre>
+
 ```bash
 sed "s,\~,$(cd ~;pwd),g" ~/app/sublime_text_3/custom.desktop
 ```
-[sublime_imfix.c for sublime-text-3 的 c 源代码](https://gist.githubusercontent.com/ZhengxianLan/84f66a9ec5ccee72898d/raw/ba3db961dfe9b9abee75f0a35cbcd261bb83d
-e99/sublime-inux-fix-im)
+
+[sublime_imfix.c for sublime-text-3 的 c 源代码](https://gist.githubusercontent.com/ZhengxianLan/84f66a9ec5ccee72898d/raw/ba3db961dfe9b9abee75f0a35cbcd261bb83de99/sublime-inux-fix-im)
 
 发现直接更改自带的 sublime_text.desktop 效果更好
  - 可以直接在 launcher 正确显示图标和输入中文
- <pre>
+```
 [Desktop Entry]
 Version=1.0
 Type=Application
@@ -67,4 +68,4 @@ OnlyShowIn=Unity;
 Name=New File
 Exec=bash -c "export LD_PRELOAD='/home/lan/app/sublime_text_3/libsublime-imfix.so'; /home/lan/app/sublime_text_3/sublime_text %F"
 OnlyShowIn=Unity;
-</pre>
+```
