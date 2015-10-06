@@ -44,7 +44,7 @@ begin
   P2.hi
 rescue Exception=>e
   puts "Oops!!! #{e}"  #=> Oops!!! undefined method `hi' for P2:Class  
-end                    #=> (instance_eval 定义的方法仅对调用它的 obj 可见，而且实际上是绑定到了该对象的 shadow-class 上了)
+end                    #=> (instance_eval 定义的方法仅对调用它的 obj ,实际上是绑定到该对象的 shadow-class 上)
 
 
 ```
