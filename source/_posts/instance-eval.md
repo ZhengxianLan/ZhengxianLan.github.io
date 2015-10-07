@@ -8,10 +8,10 @@ tags: ['meta']
 
 ### instance_eval
 
-  在 ruby 中我们通常所说的类其实也是对象，而且是 ruby 库中 Class 类的实例，之后就很好理解了。
+  在 ruby 中我们通常所说的类其实也是对象，而且是 ruby 库中 Class 类的实例
  instance_eval 从方法名上来看就是只能通过对象来调用。
  若是普通的对象，那么 eval 出来的是个 singleton_method,
- 若是类调用，因为所有类都是内置 Class 的实例，因此 define 出来的是常见的类方法。
+ 若是类调用，因为所有类都是内置 Class 的实例，因此调用的时候形式和我们常见的类方法调用一样 
  主要就是看 eval 后面 block 的接受者是谁。
 ```ruby
 
