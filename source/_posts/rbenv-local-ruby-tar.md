@@ -1,7 +1,7 @@
 ---
 title: rbenv-install-local-ruby.tar
 date: 2015-10-07 16:02:03
-categories: ['ruby] 
+categories: ['ruby'] 
 tags: ['rbenv'] 
 ---
 
