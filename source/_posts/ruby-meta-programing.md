@@ -11,6 +11,7 @@ tags: 'meta-programing'
     - 而数据，或者说状态,却是独立的，因此保存在对象中。
 2. 类也是对象，类只是 Class 的一个实例。Class.class # => Class
 3. 开放类很强大，但是又容易受到污染造成 Monky-patch
+4. 在类内的self为类本身，而类内的实例方法里面，self表示对象的引用。
 4. 继承关系
 ```ruby
 irb(main):011:0> "".class.ancestors
