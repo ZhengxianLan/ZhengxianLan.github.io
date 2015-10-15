@@ -34,11 +34,14 @@ replace into
 ### analyze query        
 
 1. `show variables like 'slow_query_log';`
-  if off then => set global slow_query_log=on;
+  if off then 
+    set global slow_query_log=on;
 2. `show variables like 'log_queries_not_using_indexes';`
-  if off then => set global log_queries_not_using_indexes=on;
+  if off then 
+    set global log_queries_not_using_indexes=on;
 3. `show variables like 'long_query_time';`   # a variable to tell whether a query is slow query.
-  for test => set global long_query_time=0; # i.e. record every queries.
+  for test 
+    set global long_query_time=0; # i.e. record every queries.
 4. `show variables like 'slow_query_log_file';` # show where is slow_query_log_file ?
 5. tool
   1. mysqldumpslow
