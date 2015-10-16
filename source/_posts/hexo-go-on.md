@@ -1,5 +1,5 @@
 ---
-title: hexo go on
+title: resume hexo on a new system
 date: 2015-09-15 16:26:34
 categories: ['etc','hexo']
 tags:
@@ -7,7 +7,7 @@ tags:
 
 ```bash
 sudo apt-get install -y git nodejs-legacy npm
-git clone -b source git@github.com:ZhengxianLan/ZhengxianLan.github.io.git blog  
+git clone -b source git@github.com:ZhengxianLan/ZhengxianLan.github.io.git blog
 
 cd blog
 sudo npm install hexo-cli -g

@@ -6,11 +6,11 @@ tags: ['garden']
 ---
 
 
-### [js花园](http://bonsaiden.github.io/JavaScript-Garden/)
+### [javascript花园](http://bonsaiden.github.io/JavaScript-Garden/)
 
 1. 以前难以理解的prototype，在玩了ruby之后，再去看反而容易多了
 而且，也有提到monkey patching。之前是看pdf，现在看html，而且很多东西还是英文描述准确一些，翻译总有一些偏差。
-2. 在脚本运行之前，所有的声明都会被置顶，但是赋值操作却仍然保留在定义的位置。这样会造成错误。用coffeescrip就好了
+2. 在脚本运行之前，所有的声明都会被置顶，但是赋值操作却是在函数执行到所在行时才会执行。这样会造成错误。用coffeescrip就好了
 ```javascript
 foo; // 'undefined'
 foo(); // this raises a TypeError
@@ -46,34 +46,32 @@ var foo = Counter(4);
 foo.increment();
 foo.get(); // 5
 ```
- - 陷阱： 引用错误
-```javascript
-for(var i = 0; i < 5; i++) {
-    setTimeout(function() {
-        console.log(i);
-    }, 1000);
-}
-```
-匿名函数分享了外部作用域的i
-而我们需要函数的执行来激发新的作用域链
-所以
-```javascript
-for(var i = 0; i < 5; i++) {
-    (function(e) {
+
+  - 陷阱： 引用错误
+    ```javascript
+    for(var i = 0; i < 5; i++) {
         setTimeout(function() {
-            console.log(e);
+            console.log(i);
         }, 1000);
-    })(i);
-}
-```
-不一定需要通过函数传参，我们想要的只是通过执行一个匿名函数来激活作用域
-```javascript
-for(var i = 0; i < 5; i++) {
-    (function() {
-        var e=i; # create a copy
-        setTimeout(function() {
-            console.log(e);
-        }, 1000);
-    })();
-}
-```
+    }
+    // 匿名函数分享了外部作用域的 i
+    // 而我们需要函数的执行来激发新的作用域链
+    // 所以
+    for(var i = 0; i < 5; i++) {
+        (function(e) {
+            setTimeout(function() {
+                console.log(e);
+            }, 1000);
+        })(i);
+    }
+    // 不一定需要通过函数传参，我们想要的只是通过执行一个匿名函数来激活作用域
+      for(var i = 0; i < 5; i++) {
+          (function() {
+              var copy=i; # create a copy
+              setTimeout(function() {
+                  console.log(copy);
+              }, 1000);
+          })();
+      }
+
+    ```
