@@ -8,13 +8,13 @@ tags: ['coffee']
 ### intro
 
 coffeescript,真是听有意思的，ruby的甜美，python的工整，可读性，消除二义性都比原生的js要舒服多了
-- optional parentheses if args exists
-- lambda from ruby
-- from python import comprehension list
-- conveninent extends
-- all instance method will be added to prototype
-- get @ from ruby
-- string interpolation seems more beautiful
+- Optional parentheses if args exists
+- Lambda from ruby `->`
+- From python import comprehension list
+- Conveninent extends
+- All instance method will be added to prototype
+- Get @ from ruby
+- String interpolation seems more beautiful
 
 ### some demo
 
