@@ -8,6 +8,7 @@ tags: ['coffee']
 ### intro
 
 coffeescript,真是听有意思的，ruby的甜美，python的工整，可读性，消除二义性都比原生的js要舒服多了
+- indent is syntax
 - Optional parentheses if args exists
 - Lambda from ruby `->`
 - From python import comprehension list
@@ -79,3 +80,11 @@ contents = 3 <= ref.length
 close = ref[i++];
 ```
 7. 胖箭头 => 让内部函数使用外部this更方便;妈妈再也不用担心我绑错this了
+8. node.js server by coffeescript
+```coffeescript
+http=require 'http'
+http.createServer((req,res)->
+  res.writeHead(200,{'Content-Type':'text/plain'})
+  res.end('Hello World\n')
+).listen 3000,'localhost'
+```
