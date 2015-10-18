@@ -19,7 +19,7 @@ replace into
         create table new_table1 like origin_table;
         insert into new_table1 select * from origin_table;
         describe new_table1;
-    2. -- 表结构不同 	[create table ... select * from ...] ,有数据，但相关的表约束没有
+    2. -- 表结构不同 	[create table ... select * from ...] , 有数据，但相关的表约束没有
         create table new_table2 select * from origin_table where ...;
         describe new_table2;
 - 删表 delete vs truncate

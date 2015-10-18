@@ -7,7 +7,7 @@ tags: ['coffee']
 
 ### intro
 
-coffeescript,真是听有意思的，ruby的甜美，python的工整，可读性，消除二义性都比原生的js要舒服多了
+coffeescript, 真是听有意思的，ruby 的甜美，python 的工整，可读性，消除二义性都比原生的 js 要舒服多了
 - indent is syntax
 - Optional parentheses if args exists
 - Lambda from ruby `->`
@@ -25,9 +25,7 @@ coffeescript,真是听有意思的，ruby的甜美，python的工整，可读性
 solipsism = true if mind? and not world?
 ---
 if ((typeof mind !== "undefined" && mind !== null)
-&& (typeof world === "undefined" || world === null)) {
-  solipsism = true;
-}
+&& (typeof world === "undefined" || world === null)) {solipsism = true;}
   ```
   - More than exists,determined by the very followed operator, ? can generator the code you want
     - Assignment
@@ -55,14 +53,13 @@ zip = typeof lottery.drawWinner === "function"
 ```
 5. Really cool,just like open class in ruby ,using ruby module syntax
  ```javascript
-  String::dasherize = ->     | String.prototype.dasherize = function() {
-    this.replace /_/g, "-"   | return this.replace(/_/g, "-");
+  String::dasherize = ->     | String.prototype.dasherize = function() {this.replace /_/g, "-"   | return this.replace(/_/g, "-");
                              | };
  ```
 6. Swap variables is easier
   [theBait, theSwitch] = [theSwitch, theBait]
   and this make possible for  dealing with functions that return multiple values.
-7. 最后 close=ref[i++],里面的i++到底有几毛钱的必要？
+7. 最后 close=ref[i++], 里面的 i++ 到底有几毛钱的必要？
 ```javascript
 tag = "<impossible>"
 [open, contents..., close] = tag.split("")
@@ -79,7 +76,7 @@ contents = 3 <= ref.length
   : (i = 1, []),
 close = ref[i++];
 ```
-7. 胖箭头 => 让内部函数使用外部this更方便;妈妈再也不用担心我绑错this了
+7. 胖箭头 => 让内部函数使用外部 this 更方便; 妈妈再也不用担心我绑错 this 了
 8. node.js server by coffeescript
 ```coffeescript
 http=require 'http'

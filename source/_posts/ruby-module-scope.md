@@ -4,7 +4,7 @@ date: 2015-10-04 20:42:09
 categories: ['ruby']
 tags: ['module','scope']
 ---
- 当方法自定义module中有class与系统自带class重名
+ 当方法自定义 module 中有 class 与系统自带 class 重名
  则在使用标准库时需要在前面加上 ::
 ```ruby
 module M1

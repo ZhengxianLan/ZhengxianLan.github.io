@@ -5,9 +5,9 @@ categories: ['linux','ubuntu']
 tags: ['miscellaneous']
 ---
 
-apport 收集各种crash信息，并上传到ubuntu
-但是，很多信息收集上去，bug依旧
-而且，很占用cpu
+apport 收集各种 crash 信息，并上传到 ubuntu
+但是，很多信息收集上去，bug 依旧
+而且，很占用 cpu
 开发版本收集也就算了，稳定版实在不用那么丧心病狂
 遂禁之
 ```bash

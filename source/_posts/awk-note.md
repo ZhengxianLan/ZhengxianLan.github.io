@@ -7,7 +7,7 @@ tags:
 
 1. 在 cli 中用 -v key=value 给 awk 变量赋值，在 awk 程序内可以使用 key 来获取 value 值。
 	不过，不能放在 expression 中 /.../, 只能在动作块 {...} 中获取
-	而 ARGV 只能获取 awk 处理的数据文件即之后的值，而且，对于 awk 来说 ARGV[1+]被认为是要处理的数据文件。所以，一般的变量应该使用 k=v 的方式植入
+	而 ARGV 只能获取 awk 处理的数据文件即之后的值，而且，对于 awk 来说 ARGV[1+] 被认为是要处理的数据文件。所以，一般的变量应该使用 k=v 的方式植入
 	例如：
 	```awk
 		awk -v test=capitek '{
@@ -33,17 +33,17 @@ tags:
 	由于字符串的连接没有显式的操作符，因此，当涉及到其他操作符的时候，最好用 () 包裹起来。比如
 	{print "abs($1) =" -$1  }
 	上面看起来好像是连接操作，实际是进行了减法操作。若想进行字符串的连接操作，应该用下面的 2 种方式:
-	{ print "abs($1) =" (-$1)  }
-	{ print "abs($1) =",-$1  }
+	{print "abs($1) =" (-$1)  }
+	{print "abs($1) =",-$1  }
 
 6. print the last input line
-		{ last = $0 }
-	END	{ print last }
+		{last = $0}
+	END	{print last}
 7. 控制流只能用于 action 内部
 8. AWK 这本书真的非常好。作者在第二章开头就说到，这一章节将会是对该语言的描述，势必会非常详细，建议读者迅速浏览，待到遇到具体问题的时候，再回来查阅。非常非常好的建议。反观，自己看犀牛 6 的时候，竟然，试图将那些非常详细，而很少用到的细节强记下来。真的非常不好。感谢 awk，感谢伟大的作者！
 9. BEGIN,END 都必须跟 ACTION
 10. 只有双方都是数字时才会进行数字比较，否则一方自动转为 string，进行 string 比较。
-11. 在字符类(character class,i.e.:[]), 所有的字符表示它们的字面量，除了
+11. 在字符类 (character class,i.e.:[]), 所有的字符表示它们的字面量，除了
 	转义符:\
 	头部的:^
 	被字符包裹的连字符:-
@@ -60,7 +60,7 @@ tags:
 	\ddd	octal value ddd,where ddd is 1 to 3 digits between 0 and 7
 	\c 	any other character c literally(e.g., \\ for backslash,\"for")
 15. 在 awk 中，优先级：||<&&<!
-16. 范围模式(range pattern):
+16. 范围模式 (range pattern):
 	pattern1,pattern2
 	只要第一个模式匹配就会执行动作，在匹配到第二个模式之前会一直进行动作，终结于第二模式匹配的位置。若，一直无法匹配第二模式，那么会一直针对输入进行动作直至输入结束。
 	demo:
@@ -89,7 +89,7 @@ tags:
 	BEGIN	{FS=OFS="\t"}
 		{$5=1000*$3/$2;print}
 21. 通常 awk 实现可能有每行不超过 100 个字段的限制
-22. rand()返回一个随机数 x，范围 0<=x<1
+22. rand() 返回一个随机数 x，范围 0<=x<1
 23. string 的连接: 直接让他们以空格相连就可以了。
 24. 正则表达式不仅可以使用双斜杠 // 的形式，也可以使用字符串。不过，注意在字符串内，转义需要多加反斜杠 \.
 		$0 ~ /(\+|-)[0-9]+/
@@ -133,7 +133,7 @@ tags:
 38.
 	{print $1,$2> $3 } #把 $1,$2 都重定向到 $3
 	{print $1,($2) >$3 } #把 $2 重定向到 $3
-39. 在 awk 中使用 shell 命令通常需要被 "" 包裹，而且，一般使用在管道，重定向，system()函数
+39. 在 awk 中使用 shell 命令通常需要被 "" 包裹，而且，一般使用在管道，重定向，system() 函数
 	print message | "cat 1>&2"		# redirect cat to stderr
 	system("echo'" message "'1>&2")	# redirect cat to stderr	用这个比较保险哈
 	print message > "/dev/tty"		# redirect cat to stderr
@@ -153,15 +153,15 @@ tags:
 	while (getline<"file">0) ... # safe
 
 	Here the loop will be executed only when getline returns 1.
-41. awk 中的命令行参数，并不包括那些内建参数，而是在 awk 程序或者 awk 文件之后的参数，并且 ARGV[0]为 awk，所以 ARGC 总是多于实际参数.
+41. awk 中的命令行参数，并不包括那些内建参数，而是在 awk 程序或者 awk 文件之后的参数，并且 ARGV[0] 为 awk，所以 ARGC 总是多于实际参数.
 42. 	在命令行的 awk 程序中 function 定义需要使用之前，貌似是脚本语言的通用原则
 	awk 程序以脚本形式存在，那么 function 可以放在最下面
 43. awk 脚本即使关键字错误也不会提示报错。所以，拼写一定要仔细。
 44.
 	"date"|getline date	# get today's date
 	split(date,d,"")	# split date by" " into the array d
-45. printf()输出到 stdout
-	sprintf()返回一个字符串
+45. printf() 输出到 stdout
+	sprintf() 返回一个字符串
 46. 处理多行数据。若数据以空行分隔，那么只需要 BEGIN{RS=""}, 为让输出更美观则：BEGIN{RS="";ORS="\n\n"}
 47. When RS is set to "",the field separator by default is any sequence of blanks and tabs,or newline.When FS is set to \n,only a newline acts as a field separator.
 48. 或者使用 range pattern. 比如: /^doctor/,/^$/  只打印头衔是医生的数据。
