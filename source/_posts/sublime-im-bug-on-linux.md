@@ -3,6 +3,7 @@ layout: post
 title: Sublime im bug on linux
 categories: linux
 tags: [editor]
+date: 2014-09-19 22:49
 description: sublime im bug on linux
 ---
 

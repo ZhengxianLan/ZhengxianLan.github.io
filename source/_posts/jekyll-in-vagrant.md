@@ -3,6 +3,7 @@ layout: post
 title: Jekyll in vagrant
 categories: [linux]
 tags: [jekyll]
+date: 2015-04-19 22:47
 description: jekyll vagrant polling fresh
 ---
 

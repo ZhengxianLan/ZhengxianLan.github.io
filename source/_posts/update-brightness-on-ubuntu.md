@@ -3,6 +3,7 @@ layout: post
 title: Update brightness on ubuntu
 categories: linux
 tags: ubuntu
+date: 2013-10-19 22:48
 description: update brightness on ubuntu
 ---
 

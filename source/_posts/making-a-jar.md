@@ -3,6 +3,7 @@ layout: post
 title: Making a jar
 categories: java
 tags: jar
+date: 2014-10-19 22:46
 description: make jar
 ---
 
@@ -17,7 +18,7 @@ description: make jar
 
 2. 指定了 manifest 要注意，必须以一个换行结束，否则 jar 不予解析.
 <pre>
-An existing manifest file must end with a new line character.  
+An existing manifest file must end with a new line character.
 jar does not parse the last line of a manifest file if it does not end with a new line character.
 </pre>
 3. 查看 jar 内所有的文件 (不包括目录)： `jar -tf taskomc.jar |grep -v '/$'|nl`

@@ -39,7 +39,7 @@ sort(arr,0,arr.length-1)
 p arr.inspect
 ```
 
-### 从一端交替向中间扫描
+### 从一端扫描
 
 ```ruby
 def quicksort(array, min=0, max=array.length-1)
@@ -91,15 +91,18 @@ p test.inspect
   greater_array_pointer 用于标记值比 pivot_value 大的数组下标
   一旦找到值小于 pivot_value 时，就进行值的互换
   因此在开始从左边移动时:
-    if (less_array_pointer！=greater_array_pointer && array[greater_array_pointer] <= pivot_value)
+  ```
+  if (less_array_pointer！=greater_array_pointer && array[greater_array_pointer] <= pivot_value)
       游标 less_array_pointer+=1
-    end
-  当 array[greater_array_pointer] > pivot_value 时
+  end
+  when array[greater_array_pointer] > pivot_value then
     less_array_pointer 不变，
     greater_array_pointer 继续向右移动
-  直到遇见 array[greater_array_pointer] <= pivot_value
+  when array[greater_array_pointer] <= pivot_value then
     将 array[greater_array_pointer] 往前扔
-    即和 less_array_pointer 指向的 arr[less_array_pointer] 互换 (ps: arr[less_array_pointer] 大于 pivot_value)
+    即和 less_array_pointer 指向的 arr[less_array_pointer] 互换
+    (ps: arr[less_array_pointer] 在每次循环后总是指向一个大于 pivot_value 的值，类似数据库中 resultset 中的游标 )
+  ```
   =end
 
 [ref](http://codereview.stackexchange.com/questions/43667/quicksort-implementation)

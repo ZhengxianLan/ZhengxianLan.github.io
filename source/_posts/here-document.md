@@ -3,6 +3,7 @@ layout: post
 title: Here Document
 categories: [linux]
 tags: [bash]
+date: 2015-01-19 22:49
 description: here document
 ---
 

@@ -3,6 +3,7 @@ layout: post
 title: Get resources in a jar
 categories: java
 tags: jar
+date: 2014-10-19 22:48
 description: get resources in a jar
 ---
 
@@ -13,7 +14,7 @@ description: get resources in a jar
 ```
 edu/hxraid/Resource.class
 resource/res.txt
-```              
+```
 
 ```java
 // 源代码 3：
