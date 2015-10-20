@@ -87,20 +87,19 @@ p test.inspect
 ```
 1. 关键的地方在分区排序
   =begin
-  less_array_pointer 用于标记小与 pivot_value 的右边界 +1
-  greater_array_pointer 用于标记值比 pivot_value 大的数组下标
+  less_array_pointer 用于标记小于 pivot_value 的右边界 +1
+  greater_array_pointer 用于标记值比 pivot_value 大的数组元素下标
   一旦找到值小于 pivot_value 时，就进行值的互换
   因此在开始从左边移动时:
   ```
   if (less_array_pointer！=greater_array_pointer && array[greater_array_pointer] <= pivot_value)
       游标 less_array_pointer+=1
   end
-  when array[greater_array_pointer] > pivot_value then
+  if array[greater_array_pointer] > pivot_value then
     less_array_pointer 不变，
     greater_array_pointer 继续向右移动
-  when array[greater_array_pointer] <= pivot_value then
-    将 array[greater_array_pointer] 往前扔
-    即和 less_array_pointer 指向的 arr[less_array_pointer] 互换
+  if array[greater_array_pointer] <= pivot_value then
+    将 array[greater_array_pointer] 往前扔,即和 less_array_pointer 指向的 arr[less_array_pointer] 互换
     (ps: arr[less_array_pointer] 在每次循环后总是指向一个大于 pivot_value 的值，类似数据库中 resultset 中的游标 )
   ```
   =end
