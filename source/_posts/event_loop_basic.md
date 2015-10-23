@@ -20,8 +20,7 @@ void App::exec() {for(;;) {vector<Waitable> waitables;
         Waitable* whatHappened = System::waitOnAll(waitables);
         switch(whatHappened) {case &m_networkSocket: readAndDispatchNetworkEvent(); break;
             case &m_xConnection: readAndDispatchGuiEvent(); break;
-            case &m_globalTimer: readAndDispatchTimerEvent(); break;
-        }
+            case &m_globalTimer: readAndDispatchTimerEvent(); break;}
     }
 }
 ```

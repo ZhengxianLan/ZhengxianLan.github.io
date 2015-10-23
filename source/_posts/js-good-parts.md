@@ -8,10 +8,16 @@ tags: ''
 ```javascript
 var arr=[false,null,undefined,0,'',NaN];
 // Notice that, `!!' '` => true
-arr.forEach(function(e){
-   console.log(e+' => '+ !!e)
+arr.forEach(function(e){console.log(e+'=>'+ !!e+'type:'+typeof(e))
 })
+// false     => false  type: boolean
+// null      => false  type: object
+// undefined => false  type: undefined
+// 0         => false  type: number
+// ''        => false  type: string
+// NaN       => false  type: number
 ```
+
 2. 通过 object.hasOwnProperty(var) 来确定这个属性名是否是对象的成员还是从其原型链获取的的
 3. Typeof 运算符产生的值有
 	- number // typof(NaN) => 'number'
@@ -20,7 +26,15 @@ arr.forEach(function(e){
 	- undefined
 	- function
 	- object // typeof(null) => 'object'
-4. js 简单类型: 数字, 字符串, 布尔值,null,undefined
+4. js 类型: [see mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
+ - Six data types that are primitives:
+		Boolean
+		Null
+		Undefined
+		Number
+		String
+		Symbol (new in ECMAScript 6)
+  - and Object
 5. js 包括一个原型链特性, 允许对象继承另一对象的属性, 正确的使用它能减少对象初 始化的时间和内存的消耗
 6. 对象字面中, 若属性是一个合法的 js 标志符且不是保留字, 并不强制要求用引号括住属性名。
 7. 原型连接在对象更新时不会起作用。当我们对某个对象作出更新操作, 不会触及该对象的原型。
