@@ -1,24 +1,25 @@
 ---
 title: javascript-good-parts
-date: 2015-10-02 07:15:52
+date: 2014-10-02 07:15:52
 categories: ['javascript','good-parts']
 tags: ''
 ---
 1. falsy 值:
-	- false
-	- null
-	- undefined
-	- 0
-	- 空字符串’’
-	- 数字 NaN
+```javascript
+var arr=[false,null,undefined,0,'',NaN];
+// Notice that, `!!' '` => true
+arr.forEach(function(e){
+   console.log(e+' => '+ !!e)
+})
+```
 2. 通过 object.hasOwnProperty(var) 来确定这个属性名是否是对象的成员还是从其原型链获取的的
 3. Typeof 运算符产生的值有
-	- Number
-	- String
-	- Boolean
-	- Undefined
-	- Function
-	- object
+	- number // typof(NaN) => 'number'
+	- string
+	- boolean
+	- undefined
+	- function
+	- object // typeof(null) => 'object'
 4. js 简单类型: 数字, 字符串, 布尔值,null,undefined
 5. js 包括一个原型链特性, 允许对象继承另一对象的属性, 正确的使用它能减少对象初 始化的时间和内存的消耗
 6. 对象字面中, 若属性是一个合法的 js 标志符且不是保留字, 并不强制要求用引号括住属性名。
@@ -46,8 +47,8 @@ var Q=function(str){this.status=str}
 Q.prototype.get_status=function(){return this.status}
 var myQ=new Q("confused");
 console.log(myQ.get_status());// confused
-var q2=Q('methodCall');// 由于是方法调用, 没有隐式返回一个对象。而是像普通函数一样无返回 值则 q2 为 undefined
-q2.get_status();// TypeError: Cannot call method 'get_status' of undefined
+var q2=Q('methodCall'); // 由于是方法调用, 没有隐式返回一个对象。而是像普通函数一样无返回 值则 q2 为 undefined
+q2.get_status();        // TypeError: Cannot call method 'get_status' of undefined
 ```
 	- Apply 调用模式
 	接收 2 个参数, 第一个是将被绑定给 this 的值, 第二个就是一个参数数组

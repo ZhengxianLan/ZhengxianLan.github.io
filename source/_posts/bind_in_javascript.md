@@ -6,14 +6,13 @@ categories: ['javascript']
 tags: ['bind']
 ---
 
-这个是在 es5 中加进来的方法。将一个函数 f 绑定到一个对象 o 上,并返回新的函数。
-之后调用新函数就会像调用绑定对象 o 的方法 f 一样 .下面是一个为 ECMAScript 准备的
+这个是在 es5 中加进来的方法。将一个函数 f 绑定到一个对象 o 上, 并返回新的函数。
+之后调用新函数就会像调用绑定对象 o 的方法 f 一样 . 下面是一个为 ECMAScript 准备的
 bind()
 
 ```javascript
 
-if (!Function.prototype.bind) {
-  Function.prototype.bind = function (o/*,args*/) {
+if (!Function.prototype.bind) {Function.prototype.bind = function (o/*,args*/) {
     //Save this and arguments values into variables so we can
     //ues them in the nested function below.
     var self = this, boundArgs = arguments;

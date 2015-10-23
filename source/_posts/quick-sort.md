@@ -99,7 +99,7 @@ p test.inspect
     less_array_pointer 不变，
     greater_array_pointer 继续向右移动
   if array[greater_array_pointer] <= pivot_value then
-    将 array[greater_array_pointer] 往前扔,即和 less_array_pointer 指向的 arr[less_array_pointer] 互换
+    将 array[greater_array_pointer] 往前扔, 即和 less_array_pointer 指向的 arr[less_array_pointer] 互换
     (ps: arr[less_array_pointer] 在每次循环后总是指向一个大于 pivot_value 的值，类似数据库中 resultset 中的游标 )
   ```
   =end
