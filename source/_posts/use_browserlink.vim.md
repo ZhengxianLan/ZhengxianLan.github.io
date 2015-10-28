@@ -36,4 +36,8 @@ document.head.appendChild(src);```
   echo "alias hs='http-server &>/dev/null &'" >~/.bash_aliases
   source ~/.zshrc
 - 运行hs,打开html编辑发现已经可以即时刷新了
-
+- 设置~/.vimrc,添加
+```vi
+nnoremap <C-g> :!google-chrome http://localhost:8080/%:t<CR> " browser preview with ctrl-p
+```
+  就可以直接在browser中打开当前文件了
