@@ -30,11 +30,13 @@ src.async = true;
 document.head.appendChild(src);```
  打开chrome，转到chrome://extensions/
  将browser.user.js 托入 chrome中
-- browser.user.js 不能是别如 file:///之类的本地文件模式
+- browser.user.js 不能识别如 file:///之类的本地文件模式
   因而需要一个简易服务器
+  ```bash
   sudo npm install http-server -g
   echo "alias hs='http-server &>/dev/null &'" >~/.bash_aliases
   source ~/.zshrc
+  ```
 - 运行hs,打开html编辑发现已经可以即时刷新了
 - 设置~/.vimrc,添加
 ```vi
