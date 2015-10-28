@@ -30,3 +30,6 @@ void App::exec() {for(;;) {vector<Waitable> waitables;
 当 event occurs，loop 会被唤醒，处理完毕，进入下一轮循环。
 
 
+[另有libuv的解释](http://nikhilm.github.io/uvbook/basics.html#event-loops)
+对于系统来说，线程是最小运行单位，libuv和操作系统会跑个后台线程轮巡任务和执行其他任务，但这都不需要我们关心，我们只需认为nodejs是单线程就可以
+[更为详细的解释](http://docs.libuv.org/en/v1.x/design.html#the-i-o-loop)
