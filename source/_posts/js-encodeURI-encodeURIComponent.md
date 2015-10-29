@@ -2,7 +2,7 @@
 title: encodeURI encodeURIComponent
 layout: post
 date: 2015-10-23 23:36:15
-categories: ['js','encode']
+categories: ['javascript','encode']
 tags: ['web']
 ---
 
