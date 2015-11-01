@@ -78,3 +78,4 @@ l test                                     # 由于之前test的ugo都具备执�
 ref:
   [Linux文件权限4位数字含义  ](http://blog.163.com/wang_ly2442/blog/static/94943407201482195732291/)
   [linux权限补充：rwt rwT rws rwS 特殊权限](http://www.cnblogs.com/qlwy/archive/2011/06/26/2121919.html)
+  [更多参考IBM](http://www.ibm.com/developerworks/cn/linux/l-lpic1-v3-104-5/)
