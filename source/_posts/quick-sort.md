@@ -44,30 +44,30 @@ p arr.inspect
 ```ruby
 def quicksort(array, min=0, max=array.length-1)
   if min < max
-    index = reorder_partition(array, min, max)
+    index = partition(array, min, max)
     quicksort(array, min, index-1)
     quicksort(array, index+1, max)
   end
 end
 
-def reorder_partition(array, left_index, right_index)
-  middle_index = (left_index + right_index)/2
-  pivot_value = array[middle_index]
+def partition(array, left, right)
+  mid = (left + right)/2
+  pivot = array[mid]
 
-  array.swap!(middle_index, right_index)
+  array.swap!(mid, right)
 
-  less_array_pointer = left_index
+  less = left
 
-  (left_index...right_index).each do |greater_array_pointer|
-    if (array[greater_array_pointer] <= pivot_value && greater_array_pointer!=less_array_pointer)
-      array.swap!(greater_array_pointer, less_array_pointer)
-      less_array_pointer+=1
+  (left...right).each do |greater|
+    if (array[greater] <= pivot && greater!=less)
+      array.swap!(greater, less)
+      less+=1
     end
   end
 
-  array.swap!(less_array_pointer, right_index)
+  array.swap!(less, right)
 
-  return less_array_pointer
+  return less
 end
 
 class Array
@@ -87,20 +87,20 @@ p test.inspect
 ```
 1. 关键的地方在分区排序
   =begin
-  less_array_pointer 用于标记小于 pivot_value 的右边界 +1
-  greater_array_pointer 用于标记值比 pivot_value 大的数组元素下标
-  一旦找到值小于 pivot_value 时，就进行值的互换
+  less 用于标记小于 pivot 的右边界 +1
+  greater 用于标记值比 pivot 大的数组元素下标
+  一旦找到值小于 pivot 时，就进行值的互换
   因此在开始从左边移动时:
   ```
-  if (less_array_pointer！=greater_array_pointer && array[greater_array_pointer] <= pivot_value)
-      游标 less_array_pointer+=1
+  if (less！=greater && array[greater] <= pivot)
+      游标 less+=1
   end
-  if array[greater_array_pointer] > pivot_value then
-    less_array_pointer 不变，
-    greater_array_pointer 继续向右移动
-  if array[greater_array_pointer] <= pivot_value then
-    将 array[greater_array_pointer] 往前扔, 即和 less_array_pointer 指向的 arr[less_array_pointer] 互换
-    (ps: arr[less_array_pointer] 在每次循环后总是指向一个大于 pivot_value 的值，类似数据库中 resultset 中的游标 )
+  if array[greater] > pivot then
+    less 不变，
+    greater 继续向右移动
+  if array[greater] <= pivot then
+    将 array[greater] 往前扔, 即和 less 指向的 arr[less] 互换
+    (ps: arr[less] 在每次循环后总是指向一个大于 pivot 的值，类似数据库中 resultset 中的游标 )
   ```
   =end
 

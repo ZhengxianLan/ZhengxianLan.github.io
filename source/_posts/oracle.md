@@ -23,7 +23,7 @@ select*from sys.all_ind_columns where table_name='EMP';
 ```sql
 select*from all_constraints where table_name='EMP';
 ```
-5.在oracle中描述数据字典视图
+5. 在oracle中描述数据字典视图
 ```sql
 select table_name,comments from dictionary where table_name like '%TABLE%';
 ```
