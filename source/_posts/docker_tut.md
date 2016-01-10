@@ -28,6 +28,7 @@ ctrl-p ctrl-q                                      # 跳出本次会话，而不
 
 状态为 exited，stop,created 的都是已经停止运行的容器，需要start之后才能连接
 
+## build your own image
 ### create a docker image from an existing container
 ####docker commit
 - run container --> modify it --> stop it --> create image from it
@@ -46,4 +47,33 @@ ctrl-p ctrl-q                                      # 跳出本次会话，而不
            mymod/httpd:v1 /usr/sbin/httpd -D FOREGROUND   # using multiple -p options to bind restrict IP addr
 # docker rmi mymod/httpd:v1   # remove an image
 ```
-[Create a docker image from an existing container]
+[Create a docker image from an existing container](https://docs.oracle.com/cd/E52668_01/E54669/html/section_c5q_n2z_fp.html)
+### Building an image from a Dockerfile
+```bash
+$ mkdir sinatra
+$ cd sinatra
+$ touch Dockerfile
+
+```
+Dockerfile
+<pre>
+# This is a comment
+FROM ubuntu:14.04
+MAINTAINER Kate Smith <ksmith@example.com>
+RUN apt-get update && apt-get install -y ruby ruby-dev
+RUN gem install sinatra
+</pre>
+
+cd to directory which contain Dockerfile
+```bash
+$ docker build -t ouruser/sinatra:v2 .
+```
+instruction:
+- You’ve specified our docker build command and used the -t flag to identify our new image as belonging to the user ouruser, the repository name sinatra and given it the tag v2.
+
+- You’ve also specified the location of our Dockerfile using the . to indicate a Dockerfile in the current directory.
+  Note: You can also specify a path to a Dockerfile.
+```bash
+$ docker run -t -i ouruser/sinatra:v2 /bin/bash
+```
+[Build your own images](https://docs.docker.com/engine/userguide/dockerimages/)
