@@ -27,3 +27,23 @@ ctrl-p ctrl-q                                      # 跳出本次会话，而不
 ```
 
 状态为 exited，stop,created 的都是已经停止运行的容器，需要start之后才能连接
+
+### create a docker image from an existing container
+####docker commit
+- run container --> modify it --> stop it --> create image from it
+
+```bash
+# docker run -i -t --name guest oraclelinux:6.6 /bin/bash
+# yum install httpd
+# docker stop guest
+# docker commit -m "add httpd" -a "lanzhx"  `docker ps -l -q` mymod/httpd:v1
+# docker images # lists images
+# docker rm guest
+# docker run -d --name newguest -p 8080:80 mymod/httpd:v1 /usr/sbin/httpd -D FOREGROUND
+# docker ps
+# docker port newguest 80
+# docker run -d --name newguest -p 127.0.0.1:8080:80 -p 192.168.1.2:8080:80 \
+           mymod/httpd:v1 /usr/sbin/httpd -D FOREGROUND   # using multiple -p options to bind restrict IP addr
+# docker rmi mymod/httpd:v1   # remove an image
+```
+[Create a docker image from an existing container]
