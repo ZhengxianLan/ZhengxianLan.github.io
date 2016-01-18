@@ -30,7 +30,7 @@ ctrl-p ctrl-q                                      # 跳出本次会话，而不
 
 ## build your own image
 ### create a docker image from an existing container
-####docker commit
+#### using docker commit
 - run container --> modify it --> stop it --> create image from it
 
 ```bash
