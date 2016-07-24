@@ -17,7 +17,7 @@ cat << delimiter
 delimiter
 
 
-不过需要注意的是，如果你希望使用 cat <<- 的形式，记得注释掉 .vimrc 内的 set expandtab,因为tab展开成space,
+不过需要注意的是，如果你希望使用 cat <<- 的形式，记得注释掉 .vimrc 内的 set expandtab, 因为 tab 展开成 space,
 那么 <<- 就不能将内容前的空格去掉，与预期不符。
 
 

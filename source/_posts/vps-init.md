@@ -25,7 +25,7 @@ lan  ALL=(root) NOPASSWD: ALL
 	```
 - 修改 ssh 服务配置
  `sudo vi /etc/ssh/sshd_config`
- - 使服务器定时向客户端发送心跳, 添加 
+ - 使服务器定时向客户端发送心跳, 添加
 <pre>
 	ClientAliveInterval 30
 	ClientAliveCountMax 6
@@ -43,11 +43,11 @@ ServerAliveCountMax 999
 </pre>
 
  `sudo service ssh restart`
-- shadowsocks
+- shadowsocks，
 	1. 安装 ss
 	```bash
 	sudo apt-get update
-	sudo apt-get install -y python-pip 
+	sudo apt-get install -y python-pip
 	sudo pip install shadowsocks
 	```
 	2. 添加 ss 配置
@@ -70,5 +70,7 @@ ServerAliveCountMax 999
 	 sudo ln -sf ~/bin/ssup /etc/init.d/shadowsocks
 	 sudo update-rc.d shadowsocks defaults
 	 sudo ssserver -c /etc/shadowsocks.json -d start
-```	 
+```
 
+4. shadowsocks-libev, 省内存, 自动注册为服务.
+  [安装 shadowsocks-libev](https://github.com/shadowsocks/shadowsocks-libev#configure-and-start-the-service)

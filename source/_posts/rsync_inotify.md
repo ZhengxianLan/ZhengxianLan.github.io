@@ -6,6 +6,6 @@ categories: ['linux']
 tags: ['rsync']
 ---
 
-[rsync + inotify实现服务器之间文件实时同步](http://www.pengzihe.com/?p=193)
+[rsync + inotify 实现服务器之间文件实时同步](http://www.pengzihe.com/?p=193)
 
 

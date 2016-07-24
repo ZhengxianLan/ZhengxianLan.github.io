@@ -8,9 +8,7 @@ tags: ['base']
 
 ```javascript
 var done;
-function hi(arg) {
- return done=true,"hello " +arg;
-}
+function hi(arg) {return done=true,"hello" +arg;}
 console.log(hi("中国"));
 console.log("done=>"+done)
 
