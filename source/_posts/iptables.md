@@ -19,51 +19,8 @@ iptables 底层由 netfilter 模块实现
   - 连接状态 (new,ESTABLISHED,RELATED,INVALID)
 
 #### Netfilter
-<table>
-<thead>
-        <tr>
-            <th rowspan="2">Filtering point (chain)</th>
-            <th colspan="3">Table</th>
-        </tr>
-        <tr>
-            <th>filter</th>
-            <th>nat</th>
-            <th>mangle</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>INPUT</td>
-            <td>ok</td>
-            <td></td>
-            <td>ok</td>
-         </tr>
-          <tr>
-            <td>FORWARD</td>
-            <td>ok</td>
-            <td></td>
-            <td>ok</td>
-         </tr>
-          <tr>
-            <td>OUTPUT</td>
-            <td>ok</td>
-            <td>ok</td>
-            <td>ok</td>
-         </tr>
-          <tr>
-            <td>PREROUTING</td>
-            <td></td>
-            <td>ok</td>
-            <td>ok</td>
-         </tr>
-          <tr>
-            <td>POSTROUTING</td>
-            <td></td>
-            <td>ok</td>
-            <td>ok</td>
-         </tr>
-    </tbody>
-</table>
+
+![iptables规则](/img/iptable_filter.png)
 
 - filter 用于对数据进行过滤
 - nat 用于对数据包的源、目标地址进行修改
