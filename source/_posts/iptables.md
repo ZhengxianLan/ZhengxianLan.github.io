@@ -20,7 +20,7 @@ iptables 底层由 netfilter 模块实现
 
 #### Netfilter
 
-![iptables规则](/img/iptable_filter.png)
+![iptables规则](http://i4.piimg.com/4851/c53954d437866e56.png)
 
 - filter 用于对数据进行过滤
 - nat 用于对数据包的源、目标地址进行修改
